@@ -24,7 +24,7 @@ public class PriceTable {
 
         /* Menu de seleções */
         while (select != 4) {
-            select = InOut.leInt("1 | Consultar o preço de um produto, informando seu código" + "\n"
+            select = InOut.leIntTab("PriceTable","1 | Consultar o preço de um produto, informando seu código" + "\n"
                     + "2 | Alterar o preço de um produto, informando seu código" + "\n"
                     + "3 | Pesquisar o código do produto que possui maior preço" + "\n"
                     + "4 | Finalizar o programa.");
@@ -84,8 +84,8 @@ public class PriceTable {
                 }
                 /* Modificacao Produtos */
             } else if (select == 2) {
-                cod2 = InOut.leInt(
-                        "<html><b>Digite o código do produto a ser alterado</b></html> " + "\n"
+                cod2 = InOut.leIntTab(
+                        "Alteração de preço","<html><b>Digite o código do produto a ser alterado</b></html> " + "\n"
                                 + "PRODUTOS | " + "PREÇO(R$)" + "\n"
                                 + itens + vetCod[0] + " | R$" + String.format("%.2f", vetPreco[0]) + "\n"
                                 + itens + vetCod[1] + " | R$" + String.format("%.2f", vetPreco[1]) + "\n"
@@ -95,7 +95,7 @@ public class PriceTable {
                                 + itens + vetCod[5] + " | R$" + String.format("%.2f", vetPreco[5]) + "\n"
                                 + itens + vetCod[6] + " | R$" + String.format("%.2f", vetPreco[6]));
 
-                mod = InOut.leDouble("Digite um novo valor para o produto" + cod2);
+                mod = InOut.leDoubleTab("Novo Valor","Digite um novo valor para o produto " + cod2);
                 switch (cod2) {
                     case 32:
                         vetPreco[0] = mod;

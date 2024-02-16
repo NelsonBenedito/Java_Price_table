@@ -222,6 +222,24 @@ public class InOut {
 		} while (ERRO);
 		return num;
 	}
+	public static double leDoubleTab(String cabecalho,String frase) {
+		double num = 0;
+		String Entrada;
+		boolean ERRO;
+
+		do {
+			try {
+				Entrada = JOptionPane.showInputDialog(null, (frase), cabecalho, JOptionPane.QUESTION_MESSAGE);
+				num = Double.parseDouble(Entrada);
+				ERRO = false;
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "VALOR DEVE SER UM NUMERO DO TIPO " + "DOUBLE",
+						"   >>>      ERRO     <<<", JOptionPane.ERROR_MESSAGE);
+				ERRO = true;
+			}
+		} while (ERRO);
+		return num;
+	}
 
 	/**
 	 * Este metodo e para entrada de um objeto do tipo char. Tem como parametro de
